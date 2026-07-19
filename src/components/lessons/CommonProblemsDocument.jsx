@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const sourceUrl = "https://media.base44.com/files/public/6a5d04483fe35abf39399c85/448597b30_Commonproblems.docx";
-const signature = [0x50, 0x4b, 0x05, 0x06];
-const findEnd = (bytes) => { for (let i = bytes.length - 4; i >= 0; i -= 1) if (signature.every((value, index) => bytes[i + index] === value)) return i; return -1; };
-const decode = (value) => value.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(sourceUrl)}`;
 
-async function getParagraphs() {
-  const bytes = new Uint8Array(await (await fetch(sourceUrl)).arrayBuffer()), view = new DataView(bytes.buffer), end = findEnd(bytes), start = view.getUint32(end + 16, true);
-  let cursor = start, entry;
-  while (view.getUint32(cursor, true) === 0x02014b50) { const nameSize = view.getUint16(cursor + 28, true), extra = view.getUint16(cursor + 30, true), comment = view.getUint16(cursor + 32, true), name = new TextDecoder().decode(bytes.slice(cursor + 46, cursor + 46 + nameSize)); if (name === "word/document.xml") { entry = { method: view.getUint16(cursor + 10, true), size: view.getUint32(cursor + 20, true), offset: view.getUint32(cursor + 42, true) }; break; } cursor += 46 + nameSize + extra + comment; }
-  const local = entry.offset, nameSize = view.getUint16(local + 26, true), extra = view.getUint16(local + 28, true), zipped = bytes.slice(local + 30 + nameSize + extra, local + 30 + nameSize + extra + entry.size), raw = entry.method === 8 ? await new Response(new Blob([zipped]).stream().pipeThrough(new DecompressionStream("deflate-raw"))).arrayBuffer() : zipped.buffer, xml = new TextDecoder().decode(raw);
-  return [...xml.matchAll(/<w:p(?: [^>]*)?>([\s\S]*?)<\/w:p>/g)].map((match) => decode([...match[1].replace(/<w:tab\s*\/>/g, "    ").matchAll(/<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>/g)].map((item) => item[1]).join("") + (match[1].includes("<w:br") ? "\n" : "")).trimEnd()).filter(Boolean);
-}
-
-export default function CommonProblemsDocument({ onSelect }) {
-  const [paragraphs, setParagraphs] = useState(null);
-  useEffect(() => { getParagraphs().then(setParagraphs); }, []);
-  const selectText = () => { const text = window.getSelection().toString().trim(); if (text) onSelect(text); };
-  if (!paragraphs) return <p className="py-16 text-center text-sm text-slate-500">Cargando el documento…</p>;
-  return <div className="document-section" onMouseUp={selectText}>{paragraphs.map((paragraph, index) => <p key={index} className={index < 3 ? "text-center font-bold" : ""}>{paragraph}</p>)}</div>;
+export default function CommonProblemsDocument() {
+  return <iframe title="Documento Common Problems" src={viewerUrl} className="h-[80vh] w-full rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/15" />;
 }
