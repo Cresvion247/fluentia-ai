@@ -1,3 +1,0 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
-export default function FormattedDocument({ content }) { return <article className="document-content rounded-3xl border border-indigo-100 bg-white/80 p-6 shadow-xl shadow-indigo-950/5 backdrop-blur sm:p-10 dark:border-white/10 dark:bg-white/5"><ReactMarkdown components={{table:({children})=><div className="my-6 overflow-x-auto"><table>{children}</table></div>}}>{content}</ReactMarkdown></article>; }
