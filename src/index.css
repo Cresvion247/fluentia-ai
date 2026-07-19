@@ -33,6 +33,7 @@
     --font-body: ui-sans-serif, system-ui, sans-serif;
     --font-display: ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-document: "Times New Roman", Times, serif;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -68,6 +69,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --font-document: "Times New Roman", Times, serif;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -99,9 +101,12 @@
   .document-content table { @apply min-w-full border-collapse overflow-hidden rounded-xl border border-slate-200 text-left text-sm dark:border-white/15; }
   .document-content th { @apply border-b border-slate-200 bg-indigo-50 px-4 py-3 font-bold dark:border-white/15 dark:bg-white/10; }
   .document-content td { @apply border-b border-slate-100 px-4 py-3 dark:border-white/10; }
-  .document-section { @apply rounded-2xl border border-indigo-100 bg-white/80 p-6 shadow-sm dark:border-white/10 dark:bg-white/5; }
+  .document-section { @apply bg-white px-8 py-6 text-black shadow-sm dark:bg-white dark:text-black; }
   .document-section:first-child { @apply text-center; }
-  .document-section h2 { @apply text-2xl font-bold; }
-  .document-section p, .document-line p { @apply whitespace-pre-wrap font-mono text-sm leading-7 text-slate-800 dark:text-slate-100; }
-  .document-line { @apply rounded-xl bg-white/60 px-6 py-2 dark:bg-white/5; }
+  .document-section h2 { @apply mb-3 font-document text-[15px] font-normal leading-5; }
+  .document-row { @apply flex items-start gap-2; }
+  .document-section p { @apply m-0 whitespace-pre-wrap font-document text-[15px] leading-5; }
+  .document-word { @apply rounded hover:bg-cyan-100 hover:text-cyan-900; }
+  .translation-button { @apply mt-0.5 shrink-0 rounded p-1 text-cyan-700 opacity-0 transition hover:bg-cyan-100 focus:opacity-100 group-hover:opacity-100; }
+  .document-row:hover .translation-button { @apply opacity-100; }
 }
