@@ -106,6 +106,7 @@
   .document-row { @apply flex items-start gap-2; }
   .document-section p { @apply m-0 whitespace-pre-wrap font-document text-[15px] leading-5; }
   .document-word { @apply rounded hover:bg-cyan-100 hover:text-cyan-900; }
+  .document-word.font-bold { @apply bg-cyan-100; }
   .translation-button { @apply mt-0.5 shrink-0 rounded p-1 text-cyan-700 opacity-0 transition hover:bg-cyan-100 focus:opacity-100 group-hover:opacity-100; }
   .document-row:hover .translation-button { @apply opacity-100; }
 }
