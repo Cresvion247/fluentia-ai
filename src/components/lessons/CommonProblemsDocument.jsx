@@ -18,5 +18,5 @@ export default function CommonProblemsDocument({ onSelect }) {
   useEffect(() => { getParagraphs().then(setParagraphs); }, []);
   const selectText = () => { const text = window.getSelection().toString().trim(); if (text) onSelect(text); };
   if (!paragraphs) return <p className="py-16 text-center text-sm text-slate-500">Cargando el documento…</p>;
-  return <div className="space-y-8" onMouseUp={selectText}>{paragraphs.map((paragraph, index) => <section key={index} className="document-section"><p>{paragraph}</p></section>)}</div>;
+  return <div className="document-section" onMouseUp={selectText}>{paragraphs.map((paragraph, index) => <p key={index} className={index < 3 ? "text-center font-bold" : ""}>{paragraph}</p>)}</div>;
 }
