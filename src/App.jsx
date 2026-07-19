@@ -10,6 +10,7 @@ import Home from '@/pages/Home';
 import WritingFeedback from '@/pages/WritingFeedback';
 import SpeakingFeedback from '@/pages/SpeakingFeedback';
 import Pronunciation from '@/pages/Pronunciation';
+import SilentLetters from '@/pages/SilentLetters';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -43,6 +44,7 @@ const AuthenticatedApp = () => {
       <Route path="/escritura" element={<WritingFeedback />} />
       <Route path="/expresion-oral" element={<SpeakingFeedback />} />
       <Route path="/pronunciacion" element={<Pronunciation />} />
+      <Route path="/letras-silenciosas" element={<SilentLetters />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
