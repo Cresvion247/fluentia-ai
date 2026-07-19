@@ -10,6 +10,7 @@ import Home from '@/pages/Home';
 import WritingFeedback from '@/pages/WritingFeedback';
 import SpeakingFeedback from '@/pages/SpeakingFeedback';
 import Pronunciation from '@/pages/Pronunciation';
+import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -54,6 +55,7 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
+          <TextSelectionMenu />
           <ScrollToTop />
           <AuthenticatedApp />
         </Router>
