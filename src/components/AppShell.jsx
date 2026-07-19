@@ -6,7 +6,7 @@ export default function AppShell({ children }) {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const toggleTheme = () => { document.documentElement.classList.toggle("dark"); setDark(!dark); };
-  const links = [["Inicio", "/"], ["Pronunciación", "/pronunciacion"], ["Letras Mudas", "/letras-silenciosas"], ["Escritura", "/escritura"], ["Expresión oral", "/expresion-oral"]];
+  const links = [["Inicio", "/"], ["Pronunciación", "/pronunciacion"], ["Letras Mudas", "/letras-silenciosas"], ["Common Problems", "/common-problems"], ["Escritura", "/escritura"], ["Expresión oral", "/expresion-oral"]];
   return <div className="min-h-screen bg-[#f7f9ff] text-slate-900 dark:bg-[#09111f] dark:text-slate-100">
     <header className="sticky top-0 z-30 border-b border-white/50 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-[#09111f]/70"><div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
       <Link to="/" className="flex items-center gap-2 font-bold tracking-tight"><span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-white"><GraduationCap size={20}/></span><span>English<span className="text-indigo-600">Path</span></span></Link>
