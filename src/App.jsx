@@ -9,6 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
 import WritingFeedback from '@/pages/WritingFeedback';
 import SpeakingFeedback from '@/pages/SpeakingFeedback';
+import Pronunciation from '@/pages/Pronunciation';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -40,6 +41,7 @@ const AuthenticatedApp = () => {
       <Route path="/" element={<Home />} />
       <Route path="/escritura" element={<WritingFeedback />} />
       <Route path="/expresion-oral" element={<SpeakingFeedback />} />
+      <Route path="/pronunciacion" element={<Pronunciation />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
