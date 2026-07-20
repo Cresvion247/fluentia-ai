@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { parseDocx } from "@/lib/docx-parser";
 
-export default function DocxTableDocument({ sourceUrl, onSelect, fullWidth = true, headingOverride, highlightWords = [] }) {
+export default function DocxTableDocument({ sourceUrl, onSelect, fullWidth = true, headingOverride, highlightWords = [], showParagraphs = true }) {
   const [document, setDocument] = useState(null);
   useEffect(() => { parseDocx(sourceUrl).then(setDocument); }, [sourceUrl]);
   const selectText = () => { const text = window.getSelection().toString().trim(); if (text && onSelect) onSelect(text); };
@@ -18,6 +18,6 @@ export default function DocxTableDocument({ sourceUrl, onSelect, fullWidth = tru
   };
   return <article onMouseUp={selectText} className="mx-auto min-h-[1123px] max-w-[794px] select-text bg-white px-0 py-24 text-black shadow-sm">
     {(document.tables || [document.rows]).map((table, tableIndex) => table.length > 0 && <table key={tableIndex} className="w-full border-collapse"><tbody>{table.map((row) => <tr key={row.id}>{row.cells.map((cell) => <td key={cell.id} colSpan={cell.colSpan} className="border border-black px-[7px] py-0 align-top">{cell.paragraphs.map(renderParagraph)}</td>)}</tr>)}</tbody></table>)}
-    {document.paragraphs.length > 0 && <div>{document.paragraphs.map(renderParagraph)}</div>}
+    {showParagraphs && document.paragraphs.length > 0 && <div>{document.paragraphs.map(renderParagraph)}</div>}
   </article>;
 }
