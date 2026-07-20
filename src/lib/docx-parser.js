@@ -29,7 +29,7 @@ const paragraphStyle = (xml) => {
 const parseParagraphs = (xml) => [...xml.matchAll(/<w:p(?:\s[^>]*)?>([\s\S]*?)<\/w:p>/g)].map((paragraph, index) => ({ id: index, style: paragraphStyle(paragraph[1]), runs: [...paragraph[1].matchAll(/<w:r(?:\s[^>]*)?>([\s\S]*?)<\/w:r>/g)].map((run, runIndex) => ({ id: runIndex, style: runStyle(run[1]), text: decode([...run[1].matchAll(/<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>/g)].map((text) => text[1]).join("") + (run[1].includes("<w:tab") ? "\u00a0\u00a0\u00a0\u00a0" : "") + (run[1].includes("<w:br") ? "\n" : "")) })) }));
 
 export async function parseDocx(url) {
-  const bytes = new Uint8Array(await (await fetch(url)).arrayBuffer()), xml = await unpackDocument(bytes), table = (xml.match(/<w:tbl(?:\s[^>]*)?>([\s\S]*?)<\/w:tbl>/) || [])[1] || "";
-  const rows = [...table.matchAll(/<w:tr(?:\s[^>]*)?>([\s\S]*?)<\/w:tr>/g)].map((row, index) => ({ id: index, cells: [...row[1].matchAll(/<w:tc(?:\s[^>]*)?>([\s\S]*?)<\/w:tc>/g)].map((cell, cellIndex) => ({ id: cellIndex, colSpan: Number(attr(cell[1], "gridSpan") || 1), paragraphs: parseParagraphs(cell[1]) })) }));
-  return { rows, paragraphs: parseParagraphs(xml.replace(/<w:tbl(?:\s[^>]*)?>[\s\S]*?<\/w:tbl>/g, "")) };
+  const bytes = new Uint8Array(await (await fetch(url)).arrayBuffer()), xml = await unpackDocument(bytes);
+  const tables = [...xml.matchAll(/<w:tbl(?:\s[^>]*)?>([\s\S]*?)<\/w:tbl>/g)].map((table, tableIndex) => [...table[1].matchAll(/<w:tr(?:\s[^>]*)?>([\s\S]*?)<\/w:tr>/g)].map((row, rowIndex) => ({ id: `${tableIndex}-${rowIndex}`, cells: [...row[1].matchAll(/<w:tc(?:\s[^>]*)?>([\s\S]*?)<\/w:tc>/g)].map((cell, cellIndex) => ({ id: cellIndex, colSpan: Number(attr(cell[1], "gridSpan") || 1), paragraphs: parseParagraphs(cell[1]) })) })));
+  return { tables, rows: tables[0] || [], paragraphs: parseParagraphs(xml.replace(/<w:tbl(?:\s[^>]*)?>[\s\S]*?<\/w:tbl>/g, "")) };
 }
