@@ -21,6 +21,8 @@ import B1Conversation from '@/pages/B1Conversation';
 import B1ConversationUnit from '@/pages/B1ConversationUnit';
 import B2Conversation from '@/pages/B2Conversation';
 import B2ConversationUnit from '@/pages/B2ConversationUnit';
+import C1Conversation from '@/pages/C1Conversation';
+import C1ConversationUnit from '@/pages/C1ConversationUnit';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -65,6 +67,8 @@ const AuthenticatedApp = () => {
       <Route path="/b1-conversation/unit-:unit" element={<B1ConversationUnit />} />
       <Route path="/b2-conversation" element={<B2Conversation />} />
       <Route path="/b2-conversation/unit-:unit" element={<B2ConversationUnit />} />
+      <Route path="/c1-conversation" element={<C1Conversation />} />
+      <Route path="/c1-conversation/unit-:unit" element={<C1ConversationUnit />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
