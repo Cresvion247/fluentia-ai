@@ -14,6 +14,8 @@ import SilentLetters from '@/pages/SilentLetters';
 import CommonProblems from '@/pages/CommonProblems';
 import EngSpan from '@/pages/EngSpan';
 import PhrasalVerbs from '@/pages/PhrasalVerbs';
+import PhrasalVerbsQuestions from '@/pages/PhrasalVerbsQuestions';
+import PhrasalVerbsQA from '@/pages/PhrasalVerbsQA';
 import VerbsPrepositions from '@/pages/VerbsPrepositions';
 import IdiomsExpressions from '@/pages/IdiomsExpressions';
 import IngOrInfinitive from '@/pages/IngOrInfinitive';
@@ -60,6 +62,8 @@ const AuthenticatedApp = () => {
       <Route path="/common-problems" element={<CommonProblems />} />
       <Route path="/engspan" element={<EngSpan />} />
       <Route path="/phrasal-verbs" element={<PhrasalVerbs />} />
+      <Route path="/phrasal-verbs/questions" element={<PhrasalVerbsQuestions />} />
+      <Route path="/phrasal-verbs/qa" element={<PhrasalVerbsQA />} />
       <Route path="/verbs-prepositions" element={<VerbsPrepositions />} />
       <Route path="/idioms-expressions" element={<IdiomsExpressions />} />
       <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
