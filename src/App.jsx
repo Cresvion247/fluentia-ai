@@ -14,6 +14,7 @@ import SilentLetters from '@/pages/SilentLetters';
 import CommonProblems from '@/pages/CommonProblems';
 import EngSpan from '@/pages/EngSpan';
 import PhrasalVerbs from '@/pages/PhrasalVerbs';
+import VerbsPrepositions from '@/pages/VerbsPrepositions';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -51,6 +52,7 @@ const AuthenticatedApp = () => {
       <Route path="/common-problems" element={<CommonProblems />} />
       <Route path="/engspan" element={<EngSpan />} />
       <Route path="/phrasal-verbs" element={<PhrasalVerbs />} />
+      <Route path="/verbs-prepositions" element={<VerbsPrepositions />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
