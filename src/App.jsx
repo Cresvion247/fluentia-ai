@@ -19,6 +19,8 @@ import IdiomsExpressions from '@/pages/IdiomsExpressions';
 import IngOrInfinitive from '@/pages/IngOrInfinitive';
 import B1Conversation from '@/pages/B1Conversation';
 import B1ConversationUnit from '@/pages/B1ConversationUnit';
+import B2Conversation from '@/pages/B2Conversation';
+import B2ConversationUnit from '@/pages/B2ConversationUnit';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -61,6 +63,8 @@ const AuthenticatedApp = () => {
       <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
       <Route path="/b1-conversation" element={<B1Conversation />} />
       <Route path="/b1-conversation/unit-:unit" element={<B1ConversationUnit />} />
+      <Route path="/b2-conversation" element={<B2Conversation />} />
+      <Route path="/b2-conversation/unit-:unit" element={<B2ConversationUnit />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
