@@ -1,0 +1,28 @@
+{
+  "name": "PhrasalVerbsQAItem",
+  "type": "object",
+  "properties": {
+    "section": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "phrasal_verbs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "position": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "question",
+    "answer"
+  ]
+}
