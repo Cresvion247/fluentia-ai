@@ -31,5 +31,5 @@ const parseParagraphs = (xml) => [...xml.matchAll(/<w:p(?:\s[^>]*)?>([\s\S]*?)<\
 export async function parseDocx(url) {
   const bytes = new Uint8Array(await (await fetch(url)).arrayBuffer()), xml = await unpackDocument(bytes), table = (xml.match(/<w:tbl(?:\s[^>]*)?>([\s\S]*?)<\/w:tbl>/) || [])[1] || "";
   const rows = [...table.matchAll(/<w:tr(?:\s[^>]*)?>([\s\S]*?)<\/w:tr>/g)].map((row, index) => ({ id: index, cells: [...row[1].matchAll(/<w:tc(?:\s[^>]*)?>([\s\S]*?)<\/w:tc>/g)].map((cell, cellIndex) => ({ id: cellIndex, colSpan: Number(attr(cell[1], "gridSpan") || 1), paragraphs: parseParagraphs(cell[1]) })) }));
-  return { rows };
+  return { rows, paragraphs: parseParagraphs(xml.replace(/<w:tbl(?:\s[^>]*)?>[\s\S]*?<\/w:tbl>/g, "")) };
 }
