@@ -66,7 +66,7 @@ const AuthenticatedApp = () => {
       <Route path="/b1-conversation" element={<B1Conversation />} />
       <Route path="/b1-conversation/unit/:unit" element={<B1ConversationUnit />} />
       <Route path="/b2-conversation" element={<B2Conversation />} />
-      <Route path="/b2-conversation/unit-:unit" element={<B2ConversationUnit />} />
+      <Route path="/b2-conversation/unit/:unit" element={<B2ConversationUnit />} />
       <Route path="/c1-conversation" element={<C1Conversation />} />
       <Route path="/c1-conversation/unit-:unit" element={<C1ConversationUnit />} />
       <Route path="*" element={<PageNotFound />} />
