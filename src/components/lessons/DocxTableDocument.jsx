@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { parseDocx } from "@/lib/docx-parser";
 
-export default function DocxTableDocument({ sourceUrl, onSelect, fullWidth = false }) {
+export default function DocxTableDocument({ sourceUrl, onSelect, fullWidth = true }) {
   const [document, setDocument] = useState(null);
   useEffect(() => { parseDocx(sourceUrl).then(setDocument); }, [sourceUrl]);
   const selectText = () => { const text = window.getSelection().toString().trim(); if (text && onSelect) onSelect(text); };
