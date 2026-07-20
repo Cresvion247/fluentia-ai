@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { base44 } from "@/api/base44Client";
-
-const fileUrl = "https://media.base44.com/files/public/6a5d04483fe35abf39399c85/38472ec59_SilentLetters1rtf1.pdf";
-const schema = { type: "object", properties: { title: { type: "string" }, sections: { type: "array", items: { type: "object", properties: { heading: { type: "string" }, content: { type: "string" } }, required: ["heading", "content"] } } }, required: ["title", "sections"] };
+import React from "react";
+import { silentLettersSections } from "@/lib/silent-letters-data";
 
 export default function SilentLettersDocument({ onSelect }) {
-  const [lesson, setLesson] = useState(null);
-  useEffect(() => { base44.integrations.Core.ExtractDataFromUploadedFile({ file_url: fileUrl, json_schema: schema }).then(({ output }) => setLesson(output)); }, []);
   const selectText = () => { const text = window.getSelection().toString().trim(); if (text) onSelect(text); };
-  if (!lesson) return <p className="py-16 text-center text-sm text-slate-500">Cargando el documento…</p>;
-  return <div className="space-y-8" onMouseUp={selectText}>
-    <h1 className="text-center font-document text-2xl font-bold text-black">{lesson.title}</h1>
-    {lesson.sections.map((section) => <section key={section.heading} className="document-section"><h2 className="font-bold">{section.heading}</h2><p>{section.content}</p></section>)}
-  </div>;
+  const formatLine = (line, section, highlight) => {
+    if (!section.letter || !highlight) return line;
+    const pieces = line.split(new RegExp(`(${section.letter})`, "gi"));
+    return pieces.map((piece, index) => piece.toLowerCase() === section.letter ? <mark key={index} className={section.tone === "red" ? "bg-transparent p-0 text-red-600" : "bg-yellow-300 p-0 text-black"}>{piece}</mark> : piece);
+  };
+  return <article onMouseUp={selectText} className="mx-auto max-w-[794px] select-text bg-white text-black shadow-sm"><table className="w-full border-collapse"><thead><tr><th colSpan="1" className="border border-black px-3 py-1 text-center font-document text-xl font-bold">Silent Letters</th></tr></thead><tbody>{silentLettersSections.map((section) => <tr key={section.heading}><td className="border border-black px-3 py-1 align-top"><h2 className="font-document text-lg font-bold leading-6">{section.heading}</h2>{section.lines.map((line, index) => <p key={index} className="whitespace-pre-wrap font-document text-[15px] leading-6">{formatLine(line, section, index === 0)}</p>)}</td></tr>)}</tbody></table></article>;
 }
