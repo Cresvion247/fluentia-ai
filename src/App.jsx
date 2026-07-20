@@ -16,6 +16,7 @@ import EngSpan from '@/pages/EngSpan';
 import PhrasalVerbs from '@/pages/PhrasalVerbs';
 import VerbsPrepositions from '@/pages/VerbsPrepositions';
 import IdiomsExpressions from '@/pages/IdiomsExpressions';
+import IngOrInfinitive from '@/pages/IngOrInfinitive';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -55,6 +56,7 @@ const AuthenticatedApp = () => {
       <Route path="/phrasal-verbs" element={<PhrasalVerbs />} />
       <Route path="/verbs-prepositions" element={<VerbsPrepositions />} />
       <Route path="/idioms-expressions" element={<IdiomsExpressions />} />
+      <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
