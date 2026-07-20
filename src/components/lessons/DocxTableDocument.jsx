@@ -17,6 +17,7 @@ export default function DocxTableDocument({ sourceUrl, onSelect, fullWidth = tru
     return <p key={paragraph.id} style={paragraph.style} className="min-h-[14px] whitespace-pre-wrap font-document leading-normal">{isOverriddenHeading ? <span style={paragraph.runs[0]?.style}>{headingOverride}</span> : paragraph.runs.map((run) => <span key={run.id} style={run.style}>{highlightText(run.text)}</span>)}</p>;
   };
   return <article onMouseUp={selectText} className="mx-auto min-h-[1123px] max-w-[794px] select-text bg-white px-0 py-24 text-black shadow-sm">
-    {document.rows.length ? <table className="w-full border-collapse"><tbody>{document.rows.map((row) => <tr key={row.id}>{row.cells.map((cell) => <td key={cell.id} colSpan={cell.colSpan} className="border border-black px-[7px] py-0 align-top">{cell.paragraphs.map(renderParagraph)}</td>)}</tr>)}</tbody></table> : <div>{document.paragraphs.map(renderParagraph)}</div>}
+    {document.rows.length > 0 && <table className="w-full border-collapse"><tbody>{document.rows.map((row) => <tr key={row.id}>{row.cells.map((cell) => <td key={cell.id} colSpan={cell.colSpan} className="border border-black px-[7px] py-0 align-top">{cell.paragraphs.map(renderParagraph)}</td>)}</tr>)}</tbody></table>}
+    {document.paragraphs.length > 0 && <div>{document.paragraphs.map(renderParagraph)}</div>}
   </article>;
 }
