@@ -24,11 +24,12 @@ export default function TextSelectionMenu() {
     };
   }, []);
 
-  const speak = () => {
-    speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(menu.text);
-    utterance.lang = "en-GB";
-    speechSynthesis.speak(utterance);
+  const speak = async () => {
+    setLoading(true);
+    const { url } = await base44.integrations.Core.GenerateSpeech({ text: menu.text, voice: "honey", language_code: "en" });
+    const audio = new Audio(url);
+    await audio.play();
+    setLoading(false);
     setMenu(null);
   };
 
