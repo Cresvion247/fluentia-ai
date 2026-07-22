@@ -30,6 +30,7 @@ import C1Conversation from '@/pages/C1Conversation';
 import C1ConversationUnit from '@/pages/C1ConversationUnit';
 import DoVsMake from '@/pages/DoVsMake';
 import InversionConditionals from '@/pages/InversionConditionals';
+import SimilesMetaphors from '@/pages/SimilesMetaphors';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
 import Business from '@/pages/Business';
@@ -83,6 +84,7 @@ const AuthenticatedApp = () => {
       <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
       <Route path="/do-vs-make" element={<DoVsMake />} />
       <Route path="/inversion-conditionals" element={<InversionConditionals />} />
+      <Route path="/similes-metaphors" element={<SimilesMetaphors />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
       <Route path="/business" element={<Business />} />
