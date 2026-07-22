@@ -37,6 +37,7 @@ import ComparativeSuperlative from '@/pages/ComparativeSuperlative';
 import Causative from '@/pages/Causative';
 import DirectIndirectQuestions from '@/pages/DirectIndirectQuestions';
 import InfinitiveOfPurpose from '@/pages/InfinitiveOfPurpose';
+import ModalVerbs from '@/pages/ModalVerbs';
 import SimilesMetaphors from '@/pages/SimilesMetaphors';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
@@ -98,6 +99,7 @@ const AuthenticatedApp = () => {
       <Route path="/causative" element={<Causative />} />
       <Route path="/direct-indirect-questions" element={<DirectIndirectQuestions />} />
       <Route path="/infinitive-of-purpose" element={<InfinitiveOfPurpose />} />
+      <Route path="/modal-verbs" element={<ModalVerbs />} />
       <Route path="/similes-metaphors" element={<SimilesMetaphors />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
