@@ -16,5 +16,6 @@ export default function AppShell({ children }) {
     </div>{open && <nav className="space-y-1 border-t px-5 py-3 md:hidden">{links.map(([name,path]) => <Link onClick={() => setOpen(false)} key={path} to={path} className="block rounded-lg px-3 py-2 text-sm hover:bg-indigo-50 dark:hover:bg-white/10">{name}</Link>)}</nav>}</header>
     {location.pathname !== "/" && <div className="mx-auto max-w-4xl px-5 pt-6"><Link to="/" className="inline-block font-medium text-indigo-600 hover:text-indigo-700">← Volver al inicio</Link></div>}
     {children}
+    {location.pathname !== "/" && <div className="mx-auto max-w-4xl px-5 pb-10 pt-6"><Link to="/" className="inline-block font-medium text-indigo-600 hover:text-indigo-700">← Volver al inicio</Link></div>}
   </div>;
 }
