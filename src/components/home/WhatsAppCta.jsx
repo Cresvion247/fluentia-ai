@@ -1,0 +1,6 @@
+import React from "react";
+import { MessageCircle, Sparkles } from "lucide-react";
+
+export default function WhatsAppCta() {
+  return <section className="px-5 py-16"><div className="mx-auto max-w-5xl rounded-3xl bg-gradient-to-br from-indigo-700 to-indigo-500 px-7 py-12 text-center text-white shadow-xl shadow-indigo-500/25 sm:px-14"><Sparkles size={22} className="mx-auto mb-4 text-indigo-100"/><h2 className="font-heading text-3xl font-bold sm:text-4xl">Descubre cómo puede transformarse tu aprendizaje</h2><p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-indigo-100">Con este material y el acompañamiento de un profesor capacitado, podrás avanzar para exámenes, negocios, trabajo o tus objetivos personales y sociales.</p><a href="https://wa.me/34614924557" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"><MessageCircle size={19}/> Empieza por WhatsApp</a><p className="mt-4 text-sm text-indigo-100">614 924 557</p></div></section>;
+}
