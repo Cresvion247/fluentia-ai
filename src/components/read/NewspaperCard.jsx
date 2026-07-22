@@ -1,0 +1,6 @@
+import React from "react";
+import { ExternalLink } from "lucide-react";
+
+export default function NewspaperCard({ newspaper }) {
+  return <a href={newspaper.url} target="_blank" rel="noreferrer" className="group flex min-h-44 flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-indigo-300 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-indigo-400/60"><span className="w-fit rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300">{newspaper.region}</span><h3 className="mt-4 font-heading text-xl font-bold text-slate-900 dark:text-white">{newspaper.name}</h3><p className="mt-2 flex-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{newspaper.blurb}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 dark:text-emerald-400">Abrir periódico <ExternalLink size={15}/></span></a>;
+}
