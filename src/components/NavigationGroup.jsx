@@ -1,0 +1,8 @@
+import React from "react";
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export default function NavigationGroup({ title, links, mobile = false, onNavigate }) {
+  if (mobile) return <details className="rounded-lg border border-slate-200 bg-white/60 dark:border-white/10 dark:bg-white/5"><summary className="flex cursor-pointer list-none items-center justify-between px-3 py-2 font-semibold"><span>{title}</span><ChevronDown size={16} /></summary><div className="border-t border-slate-200 p-2 dark:border-white/10">{links.map(([name, path]) => <Link key={path} to={path} onClick={onNavigate} className="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-white/10">{name}</Link>)}</div></details>;
+  return <details className="group relative"><summary className="flex cursor-pointer list-none items-center gap-1 py-2 text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300"><span>{title}</span><ChevronDown size={14} className="transition group-open:rotate-180" /></summary><div className="absolute left-1/2 top-full z-50 hidden w-64 -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-2 shadow-xl group-open:block dark:border-white/10 dark:bg-slate-900">{links.map(([name, path]) => <Link key={path} to={path} className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-700 dark:text-slate-200 dark:hover:bg-white/10">{name}</Link>)}</div></details>;
+}
