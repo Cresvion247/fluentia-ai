@@ -44,6 +44,7 @@ import PassiveVoice from '@/pages/PassiveVoice';
 import PhrasalNouns from '@/pages/PhrasalNouns';
 import PrepositionsTimePlace from '@/pages/PrepositionsTimePlace';
 import RelativePronouns from '@/pages/RelativePronouns';
+import ReportingVerbs from '@/pages/ReportingVerbs';
 import SimilesMetaphors from '@/pages/SimilesMetaphors';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
@@ -112,6 +113,7 @@ const AuthenticatedApp = () => {
       <Route path="/phrasal-nouns" element={<PhrasalNouns />} />
       <Route path="/prepositions-time-place" element={<PrepositionsTimePlace />} />
       <Route path="/relative-pronouns" element={<RelativePronouns />} />
+      <Route path="/reporting-verbs" element={<ReportingVerbs />} />
       <Route path="/similes-metaphors" element={<SimilesMetaphors />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
