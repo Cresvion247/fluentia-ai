@@ -16,6 +16,7 @@ import EngSpan from '@/pages/EngSpan';
 import PhrasalVerbs from '@/pages/PhrasalVerbs';
 import PhrasalVerbsQuestions from '@/pages/PhrasalVerbsQuestions';
 import PhrasalVerbsQA from '@/pages/PhrasalVerbsQA';
+import SeparableNonSeparable from '@/pages/SeparableNonSeparable';
 import VerbsPrepositions from '@/pages/VerbsPrepositions';
 import IdiomsExpressions from '@/pages/IdiomsExpressions';
 import IdiomsOne from '@/pages/IdiomsOne';
@@ -98,6 +99,7 @@ const AuthenticatedApp = () => {
       <Route path="/phrasal-verbs" element={<PhrasalVerbs />} />
       <Route path="/phrasal-verbs/questions" element={<PhrasalVerbsQuestions />} />
       <Route path="/phrasal-verbs/qa" element={<PhrasalVerbsQA />} />
+      <Route path="/phrasal-verbs/separable-non-separable" element={<SeparableNonSeparable />} />
       <Route path="/verbs-prepositions" element={<VerbsPrepositions />} />
       <Route path="/idioms-expressions" element={<IdiomsExpressions />} />
       <Route path="/idioms-expressions/idioms-1" element={<IdiomsOne />} />
