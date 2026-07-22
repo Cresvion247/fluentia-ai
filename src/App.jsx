@@ -61,6 +61,7 @@ import BusinessThree from '@/pages/BusinessThree';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 import StartLearning from '@/pages/StartLearning';
 import News from '@/pages/News';
+import EasyEnglishConversation from '@/pages/EasyEnglishConversation';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -92,6 +93,7 @@ const AuthenticatedApp = () => {
       <Route path="/" element={<Home />} />
       <Route path="/comenzar" element={<StartLearning />} />
       <Route path="/watch/news" element={<News />} />
+      <Route path="/watch/easy-english-conversation" element={<EasyEnglishConversation />} />
       <Route path="/escritura" element={<WritingFeedback />} />
       <Route path="/expresion-oral" element={<SpeakingFeedback />} />
       <Route path="/pronunciacion" element={<Pronunciation />} />
