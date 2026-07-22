@@ -21,6 +21,7 @@ import IdiomsExpressions from '@/pages/IdiomsExpressions';
 import IdiomsOne from '@/pages/IdiomsOne';
 import IdiomsTwo from '@/pages/IdiomsTwo';
 import IdiomsThree from '@/pages/IdiomsThree';
+import IdiomsFour from '@/pages/IdiomsFour';
 import IngOrInfinitive from '@/pages/IngOrInfinitive';
 import B1Conversation from '@/pages/B1Conversation';
 import B1ConversationUnit from '@/pages/B1ConversationUnit';
@@ -81,6 +82,7 @@ const AuthenticatedApp = () => {
       <Route path="/idioms-expressions/idioms-1" element={<IdiomsOne />} />
       <Route path="/idioms-expressions/idioms-2" element={<IdiomsTwo />} />
       <Route path="/idioms-expressions/idioms-3" element={<IdiomsThree />} />
+      <Route path="/idioms-expressions/idioms-4" element={<IdiomsFour />} />
       <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
       <Route path="/do-vs-make" element={<DoVsMake />} />
       <Route path="/inversion-conditionals" element={<InversionConditionals />} />

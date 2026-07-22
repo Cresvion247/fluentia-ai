@@ -5,7 +5,8 @@ import AppShell from "@/components/AppShell";
 const lessons = [
   ["Idioms 1", "Preguntas de conversación con expresiones idiomáticas.", "/idioms-expressions/idioms-1"],
   ["Idioms 2", "Idioms in Questions: práctica oral contextual.", "/idioms-expressions/idioms-2"],
-  ["Idioms 3", "Próxima lección de expresiones idiomáticas.", "/idioms-expressions/idioms-3"]
+  ["Idioms 3", "Próxima lección de expresiones idiomáticas.", "/idioms-expressions/idioms-3"],
+  ["Idioms 4", "Expresiones idiomáticas en contexto para practicar.", "/idioms-expressions/idioms-4"]
 ];
 
 export default function IdiomsExpressions() {
