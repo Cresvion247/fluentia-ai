@@ -26,6 +26,7 @@ import B2ConversationUnit from '@/pages/B2ConversationUnit';
 import C1Conversation from '@/pages/C1Conversation';
 import C1ConversationUnit from '@/pages/C1ConversationUnit';
 import DoVsMake from '@/pages/DoVsMake';
+import Affixes from '@/pages/Affixes';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -69,6 +70,7 @@ const AuthenticatedApp = () => {
       <Route path="/idioms-expressions" element={<IdiomsExpressions />} />
       <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
       <Route path="/do-vs-make" element={<DoVsMake />} />
+      <Route path="/affixes" element={<Affixes />} />
       <Route path="/b1-conversation" element={<B1Conversation />} />
       <Route path="/b1-conversation/unit/:unit" element={<B1ConversationUnit />} />
       <Route path="/b2-conversation" element={<B2Conversation />} />
