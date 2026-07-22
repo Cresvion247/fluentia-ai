@@ -36,6 +36,7 @@ import InversionWithConditionals from '@/pages/InversionWithConditionals';
 import ComparativeSuperlative from '@/pages/ComparativeSuperlative';
 import Causative from '@/pages/Causative';
 import DirectIndirectQuestions from '@/pages/DirectIndirectQuestions';
+import InfinitiveOfPurpose from '@/pages/InfinitiveOfPurpose';
 import SimilesMetaphors from '@/pages/SimilesMetaphors';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
@@ -96,6 +97,7 @@ const AuthenticatedApp = () => {
       <Route path="/comparative-superlative" element={<ComparativeSuperlative />} />
       <Route path="/causative" element={<Causative />} />
       <Route path="/direct-indirect-questions" element={<DirectIndirectQuestions />} />
+      <Route path="/infinitive-of-purpose" element={<InfinitiveOfPurpose />} />
       <Route path="/similes-metaphors" element={<SimilesMetaphors />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
