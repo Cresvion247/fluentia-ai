@@ -40,9 +40,8 @@ export default function TextSelectionMenu() {
   };
 
   if (!menu) return null;
-  const opensUpward = menu.y > window.innerHeight / 2;
-  const position = opensUpward ? { left: Math.min(menu.x, window.innerWidth - 280), bottom: window.innerHeight - menu.y } : { left: Math.min(menu.x, window.innerWidth - 280), top: menu.y };
-  return <div onClick={(event) => event.stopPropagation()} style={position} className="fixed z-50 max-h-[calc(100vh-24px)] w-64 overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-xl dark:border-white/15 dark:bg-slate-900">
+  const position = { left: Math.min(menu.x, window.innerWidth - 280), top: Math.max(12, Math.min(menu.y, window.innerHeight - 300)) };
+  return <div onClick={(event) => event.stopPropagation()} style={position} className="fixed z-50 max-h-72 w-64 overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-xl dark:border-white/15 dark:bg-slate-900">
     <button onClick={speak} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-white/10"><Volume2 size={16}/>Escuchar</button>
     <button onClick={() => ask(`Translate this English text into natural Spanish. Return only the translation: ${menu.text}`)} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-white/10"><Languages size={16}/>Traducir</button>
     <button onClick={() => setMenu({ ...menu, levels: !menu.levels })} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-white/10"><Wand2 size={16}/>Parafrasear</button>
