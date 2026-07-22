@@ -49,6 +49,7 @@ import Unreal from '@/pages/Unreal';
 import Tenses from '@/pages/Tenses';
 import Articles from '@/pages/Articles';
 import UsedToWould from '@/pages/UsedToWould';
+import UsedToVsBeUsedTo from '@/pages/UsedToVsBeUsedTo';
 import SimilesMetaphors from '@/pages/SimilesMetaphors';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
@@ -122,6 +123,7 @@ const AuthenticatedApp = () => {
       <Route path="/tenses" element={<Tenses />} />
       <Route path="/articles" element={<Articles />} />
       <Route path="/used-to-would" element={<UsedToWould />} />
+      <Route path="/used-to-vs-be-used-to" element={<UsedToVsBeUsedTo />} />
       <Route path="/similes-metaphors" element={<SimilesMetaphors />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
