@@ -3,7 +3,7 @@ import AppShell from "@/components/AppShell";
 import TtsControls from "@/components/lessons/TtsControls";
 import DocxTableDocument from "@/components/lessons/DocxTableDocument";
 
-const sourceUrl = "https://media.base44.com/files/public/6a5d04483fe35abf39399c85/ebccca17e_ComparativeandSuperlative.docx";
+const sourceUrl = "https://media.base44.com/files/public/6a5d04483fe35abf39399c85/027e287f2_ComparativeandSuperlative.docx";
 
 export default function ComparativeSuperlative() {
   const [selection, setSelection] = useState("");
