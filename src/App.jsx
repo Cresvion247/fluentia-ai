@@ -18,6 +18,9 @@ import PhrasalVerbsQuestions from '@/pages/PhrasalVerbsQuestions';
 import PhrasalVerbsQA from '@/pages/PhrasalVerbsQA';
 import VerbsPrepositions from '@/pages/VerbsPrepositions';
 import IdiomsExpressions from '@/pages/IdiomsExpressions';
+import IdiomsOne from '@/pages/IdiomsOne';
+import IdiomsTwo from '@/pages/IdiomsTwo';
+import IdiomsThree from '@/pages/IdiomsThree';
 import IngOrInfinitive from '@/pages/IngOrInfinitive';
 import B1Conversation from '@/pages/B1Conversation';
 import B1ConversationUnit from '@/pages/B1ConversationUnit';
@@ -68,6 +71,9 @@ const AuthenticatedApp = () => {
       <Route path="/phrasal-verbs/qa" element={<PhrasalVerbsQA />} />
       <Route path="/verbs-prepositions" element={<VerbsPrepositions />} />
       <Route path="/idioms-expressions" element={<IdiomsExpressions />} />
+      <Route path="/idioms-expressions/idioms-1" element={<IdiomsOne />} />
+      <Route path="/idioms-expressions/idioms-2" element={<IdiomsTwo />} />
+      <Route path="/idioms-expressions/idioms-3" element={<IdiomsThree />} />
       <Route path="/ing-or-infinitive" element={<IngOrInfinitive />} />
       <Route path="/do-vs-make" element={<DoVsMake />} />
       <Route path="/affixes" element={<Affixes />} />
