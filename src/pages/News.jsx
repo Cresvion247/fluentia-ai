@@ -10,7 +10,8 @@ const channels = [
   ["Al Jazeera English", "Catar", "Perspectiva internacional alternativa con un enfoque profundo en historias del Sur Global y debates sobre temas geopolíticos complejos.", "https://www.youtube.com/@aljazeeraenglish"],
   ["France 24 English", "Francia", "Noticias internacionales desde una mirada europea y francesa, ofreciendo reportajes culturales y análisis de la política exterior europea.", "https://www.youtube.com/@France24_en"],
   ["Euronews English", "Unión Europea (Francia)", "Perspectiva paneuropea sobre los acontecimientos políticos, económicos y sociales que impactan a la Unión Europea y al mundo.", "https://www.youtube.com/@euronews"],
-  ["DW News", "Alemania", "Periodismo riguroso desde Alemania, centrado en asuntos europeos, innovación, ciencia y un análisis internacional independiente.", "https://www.youtube.com/@dwnews"]
+  ["DW News", "Alemania", "Periodismo riguroso desde Alemania, centrado en asuntos europeos, innovación, ciencia y un análisis internacional independiente.", "https://www.youtube.com/@dwnews"],
+  ["WION", "India", "Canal internacional de noticias desde India, con cobertura global y análisis sobre política, economía, tecnología y acontecimientos del Sur Global.", "https://www.youtube.com/@WION"]
 ];
 
 export default function News() {
