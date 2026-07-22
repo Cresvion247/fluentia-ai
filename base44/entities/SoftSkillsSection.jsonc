@@ -1,0 +1,23 @@
+{
+  "name": "SoftSkillsSection",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "position": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "title",
+    "questions",
+    "position"
+  ]
+}
