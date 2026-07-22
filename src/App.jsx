@@ -33,6 +33,7 @@ import DoVsMake from '@/pages/DoVsMake';
 import InversionConditionals from '@/pages/InversionConditionals';
 import ConditionalsOneTwoThree from '@/pages/ConditionalsOneTwoThree';
 import InversionWithConditionals from '@/pages/InversionWithConditionals';
+import ComparativeSuperlative from '@/pages/ComparativeSuperlative';
 import SimilesMetaphors from '@/pages/SimilesMetaphors';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
@@ -90,6 +91,7 @@ const AuthenticatedApp = () => {
       <Route path="/inversion-conditionals" element={<InversionConditionals />} />
       <Route path="/inversion-conditionals/conditionals-1-2-3" element={<ConditionalsOneTwoThree />} />
       <Route path="/inversion-conditionals/inversion-with-conditionals" element={<InversionWithConditionals />} />
+      <Route path="/comparative-superlative" element={<ComparativeSuperlative />} />
       <Route path="/similes-metaphors" element={<SimilesMetaphors />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
