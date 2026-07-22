@@ -6,4 +6,4 @@ import Benefits from "@/components/home/Benefits";
 import AiTools from "@/components/home/AiTools";
 import Control from "@/components/home/Control";
 import WhatsAppCta from "@/components/home/WhatsAppCta";
-export default function Home(){return <AppShell><main><Hero/><Methodology/><Benefits/><AiTools/><Control/><WhatsAppCta/></main><footer className="border-t border-slate-200 px-5 py-7 text-center text-sm text-slate-500 dark:border-white/10">EnglishPath · Aprendizaje personalizado de inglés</footer></AppShell>}
+export default function Home(){return <AppShell><main><Hero/><Methodology/><Benefits/><AiTools/><Control/><WhatsAppCta/></main><footer className="border-t border-slate-200 px-5 py-7 text-center text-sm text-slate-500 dark:border-white/10">Span-Ing · Aprendizaje personalizado de inglés</footer></AppShell>}
