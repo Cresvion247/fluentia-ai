@@ -63,6 +63,7 @@ import StartLearning from '@/pages/StartLearning';
 import News from '@/pages/News';
 import EasyEnglishConversation from '@/pages/EasyEnglishConversation';
 import LearnEnglishWithTVSeries from '@/pages/LearnEnglishWithTVSeries';
+import LearnEnglishWithSongs from '@/pages/LearnEnglishWithSongs';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -96,6 +97,7 @@ const AuthenticatedApp = () => {
       <Route path="/watch/news" element={<News />} />
       <Route path="/watch/easy-english-conversation" element={<EasyEnglishConversation />} />
       <Route path="/watch/learn-english-with-tv-series" element={<LearnEnglishWithTVSeries />} />
+      <Route path="/watch/learn-english-with-songs" element={<LearnEnglishWithSongs />} />
       <Route path="/escritura" element={<WritingFeedback />} />
       <Route path="/expresion-oral" element={<SpeakingFeedback />} />
       <Route path="/pronunciacion" element={<Pronunciation />} />
