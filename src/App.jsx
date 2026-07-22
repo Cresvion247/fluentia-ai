@@ -31,6 +31,10 @@ import C1ConversationUnit from '@/pages/C1ConversationUnit';
 import DoVsMake from '@/pages/DoVsMake';
 import Affixes from '@/pages/Affixes';
 import SoftSkills from '@/pages/SoftSkills';
+import Business from '@/pages/Business';
+import BusinessOne from '@/pages/BusinessOne';
+import BusinessTwo from '@/pages/BusinessTwo';
+import BusinessThree from '@/pages/BusinessThree';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
 // Add page imports here
 
@@ -79,6 +83,10 @@ const AuthenticatedApp = () => {
       <Route path="/do-vs-make" element={<DoVsMake />} />
       <Route path="/affixes" element={<Affixes />} />
       <Route path="/soft-skills" element={<SoftSkills />} />
+      <Route path="/business" element={<Business />} />
+      <Route path="/business/business-1" element={<BusinessOne />} />
+      <Route path="/business/business-2" element={<BusinessTwo />} />
+      <Route path="/business/business-3" element={<BusinessThree />} />
       <Route path="/b1-conversation" element={<B1Conversation />} />
       <Route path="/b1-conversation/unit/:unit" element={<B1ConversationUnit />} />
       <Route path="/b2-conversation" element={<B2Conversation />} />
