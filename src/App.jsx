@@ -58,6 +58,7 @@ import BusinessOne from '@/pages/BusinessOne';
 import BusinessTwo from '@/pages/BusinessTwo';
 import BusinessThree from '@/pages/BusinessThree';
 import TextSelectionMenu from '@/components/TextSelectionMenu';
+import StartLearning from '@/pages/StartLearning';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -87,6 +88,7 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/comenzar" element={<StartLearning />} />
       <Route path="/escritura" element={<WritingFeedback />} />
       <Route path="/expresion-oral" element={<SpeakingFeedback />} />
       <Route path="/pronunciacion" element={<Pronunciation />} />
