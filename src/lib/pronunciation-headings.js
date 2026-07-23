@@ -37,7 +37,7 @@ const headings = {
   35: "Acrónimos y deletreo",
   36: "Abreviaturas y lenguaje digital",
   37: "Pronunciación de la letra G",
-  38: "El sonido /ks/ de la letra X",
+  38: "Los sonidos de “cc”: /ks/ y /k/", 
   39: "El sonido /juː/ frente a /uː/",
   40: "Sonidos /z/ y /s/",
   41: "La combinación GH con sonido /f/",
