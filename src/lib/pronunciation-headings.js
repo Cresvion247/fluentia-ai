@@ -5,7 +5,7 @@ const headings = {
   3: "Vocales cortas, largas y con R",
   4: "Vocales largas con la e muda",
   5: "Vocales con R: del sonido largo al sonido rótico",
-  6: "Pronunciación de la letra A",
+  6: "El sonido schwa /ə/", 
   7: "Pronunciación de la letra E",
   8: "El sonido /æ/",
   9: "El sonido /ɑː/",
