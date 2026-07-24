@@ -8,6 +8,7 @@ const titles = {
   8: "Have to, must y don’t have to",
   10: "El infinitivo negativo",
   11: "Orden de sujeto y verbo",
+  12: "Relative Pronouns: Subject vs. Object",
   13: "Verbos y preposiciones",
   14: "El verbo invite sin preposición",
   15: "Preposiciones al final de preguntas",
