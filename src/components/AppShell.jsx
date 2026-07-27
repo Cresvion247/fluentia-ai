@@ -9,7 +9,8 @@ const groups = [
   ["Bases", [["Pronunciación", "/pronunciacion"], ["Letras Mudas", "/letras-silenciosas"], ["Common Problems", "/common-problems"], ["EngSpan", "/engspan"], ["Tenses", "/tenses"], ["Articles", "/articles"]]],
   ["Gramática", [["Ing or Infinitive", "/ing-or-infinitive"], ["Do vs. Make", "/do-vs-make"], ["Conditionals", "/inversion-conditionals"], ["Comparative & Superlative", "/comparative-superlative"], ["Causative", "/causative"], ["Direct & Indirect Questions", "/direct-indirect-questions"], ["Infinitive of Purpose", "/infinitive-of-purpose"], ["Modal Verbs", "/modal-verbs"], ["Negative Infinitive", "/negative-infinitive"], ["Participle Clause", "/participle-clause"], ["Passive Voice", "/passive-voice"], ["Prepositions of Time & Place", "/prepositions-time-place"], ["Relative Pronouns", "/relative-pronouns"], ["Reporting Verbs", "/reporting-verbs"], ["Unreal", "/unreal"], ["Used to & Would", "/used-to-would"], ["Used to vs. Be used to", "/used-to-vs-be-used-to"]]],
   ["Vocabulario", [["Phrasal Verbs", "/phrasal-verbs"], ["Verbs + Prepositions", "/verbs-prepositions"], ["Idioms and Expressions", "/idioms-expressions"], ["Phrasal Nouns", "/phrasal-nouns"], ["Similes and Metaphors", "/similes-metaphors"], ["Affixes", "/affixes"]]],
-  ["Práctica", [["Soft Skills", "/soft-skills"], ["Business", "/business"], ["B1 Conversation", "/b1-conversation"], ["B2 Conversation", "/b2-conversation"], ["C1 Conversation", "/c1-conversation"], ["Escritura", "/escritura"], ["Expresión oral", "/expresion-oral"]]]
+  ["Práctica", [["Soft Skills", "/soft-skills"], ["Business", "/business"], ["B1 Conversation", "/b1-conversation"], ["B2 Conversation", "/b2-conversation"], ["C1 Conversation", "/c1-conversation"]]],
+  ["Herramientas", [["Escritura", "/escritura"], ["Expresión oral", "/expresion-oral"]]]
 ];
 
 export default function AppShell({ children }) {
