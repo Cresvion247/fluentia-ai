@@ -12,7 +12,7 @@ import SpeakingFeedback from '@/pages/SpeakingFeedback';
 import Pronunciation from '@/pages/Pronunciation';
 import SilentLetters from '@/pages/SilentLetters';
 import CommonProblems from '@/pages/CommonProblems';
-import EngSpan from '@/pages/EngSpan';
+import IngSpan from '@/pages/IngSpan';
 import PhrasalVerbs from '@/pages/PhrasalVerbs';
 import PhrasalVerbsQuestions from '@/pages/PhrasalVerbsQuestions';
 import PhrasalVerbsQA from '@/pages/PhrasalVerbsQA';
@@ -111,7 +111,7 @@ const AuthenticatedApp = () => {
       <Route path="/pronunciacion" element={<Pronunciation />} />
       <Route path="/letras-silenciosas" element={<SilentLetters />} />
       <Route path="/common-problems" element={<CommonProblems />} />
-      <Route path="/engspan" element={<EngSpan />} />
+      <Route path="/ing-span" element={<IngSpan />} />
       <Route path="/phrasal-verbs" element={<PhrasalVerbs />} />
       <Route path="/phrasal-verbs/questions" element={<PhrasalVerbsQuestions />} />
       <Route path="/phrasal-verbs/qa" element={<PhrasalVerbsQA />} />
