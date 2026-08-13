@@ -1,0 +1,15 @@
+import React, { useRef, useState } from "react";
+import TokkerComposer from "@/components/tokker/TokkerComposer";
+import TokkerControls from "@/components/tokker/TokkerControls";
+import TokkerMessages from "@/components/tokker/TokkerMessages";
+import { base44 } from "@/api/base44Client";
+
+const instructions = `You are Tokker, an active English instructor for native Spanish speakers. Detect the learner's level from their responses. For basic learners, use short English, high repetition, the direct method, and correct errors explicitly; never guess unclear meaning, ask for clarification. For B1+ learners, use a communicative approach, natural conversation and structured progression. Always correct meaningful mistakes, explain them clearly in Spanish, ask Concept Check Questions with multiple options, actively elicit a new response, and teach threading: linking ideas into cohesive, deeper answers. Be precise, encouraging and didactic. Use English for practice and Spanish for explanations. You can teach pronunciation, grammar, vocabulary, conversation, and all the learning areas in this English-learning site: pronunciation, grammar, phrasal verbs, idioms, business English, conversation, writing and speaking feedback. Use current internet context when it improves your answer.`;
+
+export default function TokkerCoach() {
+  const [messages, setMessages] = useState([{ role: "assistant", content: "¡Hola! Soy Tokker. Cuéntame tu nivel y qué te gustaría practicar hoy. Puedes escribir o pulsar el micrófono para responder." }]);
+  const [voice, setVoice] = useState("honey"); const [speed, setSpeed] = useState("0.8"); const [loading, setLoading] = useState(false); const audioRef = useRef(null);
+  const speak = async (text) => { audioRef.current?.pause(); const { url } = await base44.integrations.Core.GenerateSpeech({ text, voice }); const audio = new Audio(url); audio.playbackRate = Number(speed); audioRef.current = audio; await audio.play(); };
+  const send = async (text) => { if (!text?.trim() || loading) return; const next = [...messages, { role: "user", content: text.trim() }]; setMessages(next); setLoading(true); const history = next.slice(-8).map((message) => `${message.role}: ${message.content}`).join("\n"); const reply = await base44.integrations.Core.InvokeLLM({ prompt: `${instructions}\n\nConversation:\n${history}\n\nReply as Tokker:`, add_context_from_internet: true, model: "gemini_3_flash" }); setMessages((current) => [...current, { role: "assistant", content: reply }]); setLoading(false); await speak(reply); };
+  return <div className="space-y-5"><TokkerControls voice={voice} speed={speed} onVoiceChange={setVoice} onSpeedChange={setSpeed} /><TokkerMessages messages={messages} loading={loading} /><TokkerComposer onSend={send} disabled={loading} /></div>;
+}
