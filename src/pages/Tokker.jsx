@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageCircleMore } from "lucide-react";
+import { ArrowUpRight, MessageCircleMore } from "lucide-react";
 import AppShell from "@/components/AppShell";
 
 export default function Tokker() {
@@ -13,7 +13,11 @@ export default function Tokker() {
           </div>
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">Tokker es tu compañero de conversación con IA para practicar idiomas. Mantén diálogos naturales, gana confianza al hablar y recibe apoyo adaptado a tu aprendizaje.</p>
         </div>
-        <iframe title="Tokker, compañero de conversación con IA" src="https://tokker-fluent-flow.base44.app" className="mt-6 h-[78vh] min-h-[600px] w-full rounded-3xl border border-indigo-100 bg-white shadow-sm dark:border-white/10" />
+        <div className="mt-6 rounded-3xl border border-indigo-100 bg-white/70 p-8 text-center shadow-sm dark:border-white/10 dark:bg-white/5">
+          <p className="text-lg font-bold">¿Listo para practicar?</p>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Abre Tokker en una nueva pestaña para comenzar tu conversación.</p>
+          <a href="https://tokker-fluent-flow.base44.app" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-700">Abrir Tokker <ArrowUpRight size={18}/></a>
+        </div>
       </section>
     </main>
   </AppShell>;
