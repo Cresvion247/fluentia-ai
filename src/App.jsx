@@ -68,6 +68,7 @@ import BbcLearningEnglishWithSongs from '@/pages/BbcLearningEnglishWithSongs';
 import BreakingNewsEnglish from '@/pages/BreakingNewsEnglish';
 import Newspapers from '@/pages/Newspapers';
 import Donate from '@/pages/Donate';
+import Tokker from '@/pages/Tokker';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -108,6 +109,7 @@ const AuthenticatedApp = () => {
       <Route path="/donate" element={<Donate />} />
       <Route path="/escritura" element={<WritingFeedback />} />
       <Route path="/expresion-oral" element={<SpeakingFeedback />} />
+      <Route path="/tokker" element={<Tokker />} />
       <Route path="/pronunciacion" element={<Pronunciation />} />
       <Route path="/letras-silenciosas" element={<SilentLetters />} />
       <Route path="/common-problems" element={<CommonProblems />} />
